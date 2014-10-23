@@ -119,30 +119,37 @@ function getVisibleHours(date) {
 
 
 function isAfter(model, date) {
+  model = new Date(Date.parse(model));
   return model && model.getTime() <= date.getTime();
 }
 
 function isBefore(model, date) {
+  model = new Date(Date.parse(model));
   return model.getTime() >= date.getTime();
 }
 
 function isSameYear(model, date) {
+  model = new Date(Date.parse(model));
   return model && model.getFullYear() === date.getFullYear();
 }
 
 function isSameMonth(model, date) {
+  model = new Date(Date.parse(model));
   return isSameYear(model, date) && model.getMonth() === date.getMonth();
 }
 
 function isSameDay(model, date) {
+  model = new Date(Date.parse(model));
   return isSameMonth(model, date) && model.getDate() === date.getDate();
 }
 
 function isSameHour(model, date) {
+  model = new Date(Date.parse(model));
   return isSameDay(model, date) && model.getHours() === date.getHours();
 }
 
 function isSameMinutes(model, date) {
+  model = new Date(Date.parse(model));
   return isSameHour(model, date) && model.getMinutes() === date.getMinutes();
 }
 
